@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>BDM</title>
+		<!-- Self Adaption -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<link rel="icon" href="images/favicon.png">
+		<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link href="plugins/animate.css" rel="stylesheet">
+		<link href="css/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="highlight/styles/darkula.css">
+	</head>
+
+	<body class="">
+		<div id="banner" class="banner">
+			<div class="banner-search">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10 col-md-offset-1" data-animation-effect="fadeIn">
+							<div>
+								<form class="" role="search" action="">
+									<div class="title">BDM Lab Exercise</div>
+									<div class="subtitle">MySQL Query Web System</div>
+									<div class="col-md-5 input-group">
+										<input type="text" class="form-control" placeholder="Input your SQL query..." name="query">
+										<span class="input-group-btn">
+											<button class="btn btn-info" type="button">Query</button>
+										</span>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="banner-result">
+                <div class="container">
+                    <div class="row col-md-10 col-md-offset-1">
+                        <div class="subtitle">The query is</div>
+                        <pre><code class="sql hljs">SELECT DISTINCT P.ticker
+FROM price P
+WHERE P.close > (
+    SELECT DISTINCT P_1.close 
+    FROM price P_1 
+    WHERE P_1.date='2017-03-20' 
+    AND P_1.ticker='IBM')
+AND P.close <= (
+    SELECT DISTINCT P_2.close 
+    FROM price P_2 
+    WHERE P_2.date='2017-03-20' 
+    AND P_2.ticker='GOOG');</code></pre>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1" data-animation-effect="fadeIn">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>ID</td>
+                                    <td>Attr2</td>
+                                    <td>Attr3</td>
+                                    <td>Attr4</td>
+                                    <td>Attr5</td>
+                                </tr>
+                                <tr>
+                                    <td>Data</td>
+                                    <td>Data</td>
+                                    <td>Data</td>
+                                    <td>Data</td>
+                                    <td>Data</td>
+                                </tr>
+                                <tr>
+                                    <td>Data</td>
+                                    <td>Data</td>
+                                    <td>Data</td>
+                                    <td>Data</td>
+                                    <td>Data</td>
+                                </tr>
+                                <tr>
+                                    <td>Data</td>
+                                    <td>Data</td>
+                                    <td>Data</td>
+                                    <td>Data</td>
+                                    <td>Data</td>
+                                </tr>
+                                <tr>
+                                    <td>Data</td>
+                                    <td>Data</td>
+                                    <td>Data</td>
+                                    <td>Data</td>
+                                    <td>Data</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<div class="banner-caption-foot">
+				<div class="container">
+					<div class="row">
+						<p class="text-center">Copyright © 2017 RyQ.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="plugins/jquery.min.js"></script>
+		<script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
+		<script type="text/javascript" src="plugins/modernizr.js"></script>
+		<script type="text/javascript" src="plugins/jquery.backstretch.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+	</body>
+</html>
